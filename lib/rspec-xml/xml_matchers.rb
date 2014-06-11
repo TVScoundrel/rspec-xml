@@ -14,12 +14,11 @@ module RSpecXML
       return unless block_given?
 
       instance_exec(example_group_block) do
-        @xpath_stack ||= [] 
+        @xpath_stack ||= []
         @xpath_stack.push xpath
         yield
         @xpath_stack.pop
       end
     end
-
   end
 end
